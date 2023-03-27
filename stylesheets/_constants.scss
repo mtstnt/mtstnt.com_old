@@ -1,8 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-$primary: #1A120B;
-$secondary: #2e2018;
+$primary: #eee;
+$secondary: #323232;
 $tertiary: #936853;
-$textColor: #E5E5CB;
-$textColor2: #D5CEA3;
+$textColor: #222;
+$textColor2: #FF1E56;
 $fontPrimary: 'Poppins', sans-serif;
+
+.bg-primary-theme {
+    background-color: $primary;
+}
+.bg-secondary-theme {
+    background-color: $secondary;
+}
+.text-primary-theme {
+    color: $textColor;
+}
+.text-secondary-theme {
+    color: $textColor2;
+}

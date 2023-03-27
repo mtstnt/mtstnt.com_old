@@ -6,10 +6,38 @@
 
 {% block description %}{% endblock description %}
 
-{% block head %}{% endblock head %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/index.css') }}">
+{% endblock head %}
 
 {% block body %}
-<div class="container">
-    Hello world
+<div id="content">
+    <h1 class="my-3">Hi there!</h1>
+    <h2 class="mt-3 mb-4">Here are some of my thoughts about programming, tech, or life in general. Enjoy!</h2>
+
+    <form action="" method="GET" class="input-group mb-4">
+        <input type="search" class="form-control" name="q" placeholder="Search something..." value="{{ query or '' }}">
+        <button class="btn btn-secondary input-group-text"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+
+    <ul class="posts" style="list-style: decimal-leading-zero;">
+        {% for post in posts %}
+        <li class="mb-3 post">
+            <a class="fs-3 fw-bold" href="/blog/{{ post.slug }}">{{ post.title }}</a>
+            <p class="m-0">{{ post.published_at or 'No publish date' }}</p>
+            <p class="m-0">{{ post.excerpt }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="pagination float-end">
+        {% if prev_link != None %}
+        <a href="{{ prev_link }}" class="btn text-decoration-underline">Prev</a>
+        {% endif %}
+
+        {% if next_link != None %}
+        <a href="{{ next_link }}" class="btn text-decoration-underline">Next</a>
+        {% endif %}
+    </div>
 </div>
 {% endblock body %}

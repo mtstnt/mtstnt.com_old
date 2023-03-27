@@ -1,15 +1,8 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark d-flex justify-content-center">
-    <div class="" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item mx-3">
-                <a class="nav-link {% if page == 'home' %}active{% endif %}" href="#">Home</a>
-            </li>
-            <li class="nav-item mx-3">
-                <a class="nav-link {% if page == 'posts' %}active{% endif %}" href="#">Blog</a>
-            </li>
-            <li class="nav-item mx-3">
-                <a class="nav-link {% if page == 'contact' %}active{% endif %}" href="#">Contact</a>
-            </li>
-        </ul>
+<nav class="d-flex justify-content-between">
+    <a class="navbar-brand fs-4 fw-bold" href="/">Matthew Sutanto</a>
+    <div class="d-flex align-items-center">
+        {# <a class="mx-2 nav-link {{ 'text-decoration-underline' if page == 'home' else '' }}" href="/">Home</a> #}
+        <a class="mx-2 nav-link {{ 'text-decoration-underline' if page == 'blog' else '' }}" href="/">Blog</a>
+        <a class="mx-2 nav-link {{ 'text-decoration-underline' if page == 'resume' else '' }}" href="/resume">Resume</a>
     </div>
 </nav>

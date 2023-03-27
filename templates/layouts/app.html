@@ -16,18 +16,23 @@
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='assets/globals.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     {% block head %}
     {% endblock head %}
 </head>
 
-<body id="wrapper">
-    <main>
-        {% include "layouts/navbar.html" %}
-        {% block body %}{% endblock body %}
-    </main>
-    {% include "layouts/footer.html" %}
+<body>
+    <div id="wrapper" class="col-sm-6 col-11 mx-auto" style="height: 100%">
+        <main class="p-4">
+            {% include "layouts/navbar.html" %}
+            {% block body %}{% endblock body %}
+        </main>
+        {% include "layouts/footer.html" %}
+    </div>
 </body>
-    {% block scripts %}{% endblock scripts %}
+{% block scripts %}{% endblock scripts %}
+
 </html>

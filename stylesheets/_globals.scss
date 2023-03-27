@@ -7,17 +7,24 @@ html, body {
     box-sizing: border-box;
     font-family: $fontPrimary;
 
-    background-color: $secondary;
+    background-color: $primary;
     color: $textColor;
 }
 
 ::selection {
-    background-color: $tertiary;
+    background-color: $textColor;
+    color: $primary;
 }
 
 .navbar {
-    background-color: $primary !important;
-    color: $textColor2 !important;
+    background-color: $secondary !important;
+    a {
+        color: $textColor !important;
+        transition: .5s;
+        &:hover {
+            color: #fff;
+        }
+    }
 }
 
 #wrapper {
@@ -30,10 +37,5 @@ html, body {
 
 main {
     grid-area: main;
-}
-
-footer {
-    background: $primary;
     color: $textColor;
-    grid-area: footer;
 }

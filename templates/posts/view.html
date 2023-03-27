@@ -15,23 +15,17 @@
 {% endblock head %}
 
 {% block body %}
-<header class="d-flex justify-content-center align-items-center flex-column" style="height: 150px">
-    <h1 class="fs-1 fw-bold">{{ meta['title'] }}</h1>
-    <span>Last edited at: {{ meta['last_modified'] }}</span>
-    <span>Authored by: {{ meta['author'] or 'admin' }}</span>
+<header class="mt-4">
+    <h1 class="fw-bold mb-4">{{ meta['title'] }}</h1>
+    <p class="mb-1">Published at: {{ meta['published_at'] }}</p>
+    <p class="mb-1">Authored by: {{ meta['author'] or 'admin' }}</p>
 </header>
-<div class="row" style="width: 100%">
-    <div class="col">
-        <div id="profile" class="shadow-lg">
-            <img class="mb-3" src="https://avatars.githubusercontent.com/u/42607878?v=4" alt="My photo">
-            <h5 class="fs-5 text-center">Matthew Sutanto</h5>
-            <h6 class="fs-6 text-center">Software Engineer</h6>
-        </div>
-    </div>
-    <div class="col-6 mx-auto">
-        <div id="content" class="mb-5 pb-5">{{ content|safe }}</div>
-    </div>
-    <div class="col">
+<div class="d-flex justify-content-center flex-column" style="width: 100%">
+    <div id="content" class="mb-5 pb-5">{{ content|safe }}</div>
+    <div id="profile" class="shadow-lg">
+        <img class="mb-3" src="https://avatars.githubusercontent.com/u/42607878?v=4" alt="My photo">
+        <h5 class="fs-5 text-center">Matthew Sutanto</h5>
+        <h6 class="fs-6 text-center">Software Engineer</h6>
     </div>
 </div>
 {% endblock body %}

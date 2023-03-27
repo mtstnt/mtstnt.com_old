@@ -59,52 +59,6 @@ main {
   color: #222;
 }
 
-header {
-  line-height: 1rem;
-}
-header h1 {
-  font-size: 4rem;
-}
-
-#content {
-  margin-top: 2rem;
-  white-space: pre-wrap;
-  line-height: 1.6rem;
-}
-#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
-  font-weight: bold !important;
-  margin: 0;
-}
-#content, #content pre, #content code {
-  font-size: 1.05rem;
-}
-#content pre, #content code {
-  border-radius: 10px;
-  font-family: "ui-monospace", "Consolas", "Courier New", Courier, monospace;
-}
-#content code {
-  padding: 20px;
-}
-#content table {
-  border: 1px solid #222;
-}
-#content table td, #content table th {
-  border: 1px solid #222;
-  padding: 5px;
-}
-
-#profile {
-  background-color: #eee;
+.post * {
   color: #222;
-  position: sticky;
-  top: 50px;
-  left: 5%;
-  width: 250px;
-  padding: 20px;
-  border-radius: 10px;
-  overflow-y: auto;
-}
-#profile img {
-  border-radius: 100%;
-  width: 100%;
-}/*# sourceMappingURL=post.css.map */
+}/*# sourceMappingURL=index.css.map */
