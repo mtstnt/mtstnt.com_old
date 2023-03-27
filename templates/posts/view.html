@@ -1,0 +1,48 @@
+{% extends "layouts/app.html" %}
+
+{% block title %}
+{{ meta['title'] or 'untitled...' }} | Matthew Sutanto
+{% endblock title %}
+
+{% block keywords %}{{ meta['keywords'] or '' }}{% endblock keywords %}
+{% block description %}{{ meta['description'] or '' }}{% endblock description %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/monokai.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/post.css') }}">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+{% endblock head %}
+
+{% block body %}
+<header class="d-flex justify-content-center align-items-center flex-column" style="height: 150px">
+    <h1 class="fs-1 fw-bold">{{ meta['title'] }}</h1>
+    <span>Last edited at: {{ meta['last_modified'] }}</span>
+    <span>Authored by: {{ meta['author'] or 'admin' }}</span>
+</header>
+<div class="row" style="width: 100%">
+    <div class="col">
+        <div id="profile" class="shadow-lg">
+            <img class="mb-3" src="https://avatars.githubusercontent.com/u/42607878?v=4" alt="My photo">
+            <h5 class="fs-5 text-center">Matthew Sutanto</h5>
+            <h6 class="fs-6 text-center">Software Engineer</h6>
+        </div>
+    </div>
+    <div class="col-6 mx-auto">
+        <div id="content" class="mb-5 pb-5">{{ content|safe }}</div>
+    </div>
+    <div class="col">
+    </div>
+</div>
+{% endblock body %}
+
+{% block scripts %}
+<script>
+    const contentContainer = document.getElementById('content');
+    var converter = new showdown.Converter({ tables: true });
+    var text = contentContainer.innerText;
+    var markdown = converter.makeHtml(text);
+    contentContainer.innerHTML = markdown;
+    hljs.highlightAll();
+</script>
+{% endblock scripts %}

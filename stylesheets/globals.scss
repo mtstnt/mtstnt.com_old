@@ -1,0 +1,39 @@
+@import 'constants';
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $fontPrimary;
+
+    background-color: $secondary;
+    color: $textColor;
+}
+
+::selection {
+    background-color: $tertiary;
+}
+
+.navbar {
+    background-color: $primary !important;
+    color: $textColor2 !important;
+}
+
+#wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "main" "footer";
+    grid-template-rows: 1fr 50px;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    background: $primary;
+    color: $textColor;
+    grid-area: footer;
+}

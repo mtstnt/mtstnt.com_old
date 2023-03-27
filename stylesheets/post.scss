@@ -1,0 +1,51 @@
+@import 'constants.scss';
+
+#content {
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold !important;
+    }
+    white-space: pre-wrap;
+    line-height: 1.6rem;
+
+    &, pre, code {
+        font-size: 1.05rem;
+    }
+
+    pre, code {
+        border-radius: 10px;
+        font-family: 'ui-monospace', 'Consolas', 'Courier New', Courier, monospace;
+    }
+
+    code {
+        padding: 20px;
+    }
+
+    table {
+        border: 1px solid $textColor;
+
+        td, th {
+            border: 1px solid $textColor;
+            padding: 5px;
+        }
+    }
+}
+
+#profile {
+    background-color: $primary;
+    color: $textColor;
+    position: sticky;
+    top: 50px;
+    left: 5%;
+
+    width: 250px;
+
+    padding: 20px;
+    border-radius: 10px;
+
+    overflow-y: auto;
+
+    img {
+        border-radius: 100%;
+        width: 100%;
+    }
+}
