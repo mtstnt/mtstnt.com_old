@@ -14,4 +14,4 @@ jobs:
               with: 
                 packages: sshpass
             - name: connect and pull
-              run: sshpass -p ${{ secrets.SSH_PASSWORD }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull origin master && pkill waitress-serve && make && exit"
+              run: sshpass -p ${{ secrets.SSH_PASSWORD }} ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull origin master && pkill waitress-serve && make && exit"
