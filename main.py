@@ -104,4 +104,5 @@ def post(slug: str):
     }
     return render_template('posts/view.html', **context)
 
-app.run(port=8080, debug=True)
+if __name__ == "__main__":
+    app.run(port=8080, debug=True)
