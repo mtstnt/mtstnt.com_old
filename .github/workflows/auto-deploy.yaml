@@ -26,4 +26,6 @@ jobs:
           cd ${{ secrets.WORK_DIR }}
           git pull origin ${{ secrets.MAIN_BRANCH }}
           pkill waitress-serve
-          make
+          . ./local/bin/activate
+          pip install -r requirements.txt
+          waitress-serve --port 8080 main:app &
