@@ -1,3 +1,4 @@
 .PHONY = serve
 serve:
-	waitress-serve --host 0.0.0.0 --port 8080 main:app
+	source ./local/bin/activate && \
+	waitress-serve --port 8080 main:app

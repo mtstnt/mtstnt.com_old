@@ -26,5 +26,4 @@ jobs:
           cd ${{ secrets.WORK_DIR }}
           git pull origin ${{ secrets.MAIN_BRANCH }}
           pkill waitress-serve
-          source ./local/bin/activate
           make
