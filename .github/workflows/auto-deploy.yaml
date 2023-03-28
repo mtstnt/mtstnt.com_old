@@ -28,4 +28,4 @@ jobs:
           pkill waitress-serve
           . ./local/bin/activate
           pip install -r requirements.txt
-          nohup waitress-serve --port 8000 main:app
+          nohup waitress-serve --port 8000 main:app < /dev/null & > /dev/null &
