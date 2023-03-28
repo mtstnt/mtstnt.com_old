@@ -25,7 +25,6 @@ jobs:
         script: |
           cd ${{ secrets.WORK_DIR }}
           git pull origin ${{ secrets.MAIN_BRANCH }}
-          pkill waitress-serve
           . ./local/bin/activate
           pip install -r requirements.txt
           pm2 restart mtstnt.com

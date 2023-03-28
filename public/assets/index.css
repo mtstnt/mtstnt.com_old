@@ -61,4 +61,10 @@ main {
 
 .post * {
   color: #222;
+}
+
+.card {
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  background-color: transparent;
 }/*# sourceMappingURL=index.css.map */

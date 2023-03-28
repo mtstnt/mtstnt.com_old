@@ -84,17 +84,6 @@ def contact():
     }
     return render_template('resume.html', **context)
 
-# @app.get('/blog')
-# def blog_home():
-#     page = request.args.get('p', 1)
-#     query = request.args.get('q', '')
-#     posts = get_posts('./posts', (int(page) - 1) * POST_COUNT_PER_PAGE + 1, POST_COUNT_PER_PAGE, query)
-#     context = {
-#         'page': 'blog',
-#         'posts': posts,
-#     }
-#     return render_template('posts/index.html', **context)
-
 @app.get('/blog/<path:slug>')
 def post(slug: str):
     filename = f'./posts/{slug}.md'
@@ -107,5 +96,5 @@ def post(slug: str):
     return render_template('posts/view.html', **context)
 
 if __name__ == "__main__":
-    waitress.serve(app, listen="127.0.0.1:8080")
-    # app.run(port=8080, debug=True)
+    # waitress.serve(app, listen="127.0.0.1:8080")
+    app.run(port=8080, debug=True)

@@ -63,17 +63,20 @@ header {
   line-height: 1rem;
 }
 header h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 #content {
   margin-top: 2rem;
   white-space: pre-wrap;
-  line-height: 1.6rem;
+  line-height: 1.4;
 }
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
   font-weight: bold !important;
   margin: 0;
+}
+#content p {
+  font-size: 1.2rem;
 }
 #content, #content pre, #content code {
   font-size: 1.05rem;
