@@ -25,7 +25,7 @@ jobs:
         script: |
           cd ${{ secrets.WORK_DIR }}
           git pull origin ${{ secrets.MAIN_BRANCH }}
-          pkill waitress-serve
+          pgrep waitress-serve | xargs kill
           . ./local/bin/activate
           pip install -r requirements.txt
-          waitress-serve --port 8080 main:app &
+          nohup waitress-serve --port 8080 main:app
