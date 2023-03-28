@@ -8,6 +8,8 @@ from flask import Flask, render_template, request
 import frontmatter
 from pathlib import Path
 
+import waitress
+
 POST_COUNT_PER_PAGE = 10
 
 app = Flask(__name__,
@@ -105,4 +107,5 @@ def post(slug: str):
     return render_template('posts/view.html', **context)
 
 if __name__ == "__main__":
-    app.run(port=8080, debug=True)
+    waitress.serve(app, listen="127.0.0.1:8080")
+    # app.run(port=8080, debug=True)
